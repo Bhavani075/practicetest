@@ -1,11 +1,21 @@
-#car game
+# car game
 command = ''
+Started = False
+Stopped = False
 while True:
     command = input('>').lower()
     if command == 'start':
-        print('car started...')
+        if Started:
+            print('car is already started')
+        else:
+            Started = True
+            print('car started...')
     elif command =='stop':
-        print('car stopped...')
+        if Stopped:
+            print('car is already stopped')
+        else:
+            Stopped = True
+            print('car stopped...')
     elif command == 'help':
         print('''
         start - to start the car
