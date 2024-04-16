@@ -1,0 +1,32 @@
+#import the data
+
+import pandas as pd
+music_data = pd.read_csv('music.csv')
+music_data
+
+
+#spliting into 2 sets, one without genre and one separted genre
+
+import pandas as pd
+music_data = pd.read_csv('music.csv')
+x = music_data.drop(columns=['genre'])
+y = music_data['genre']
+
+#learning and predictions
+#alogorithm :decision tree
+
+import pandas as pd
+from sklearn.tree import DecisionTreeClassifier
+
+music_data = pd.read_csv('music.csv')
+X = music_data.drop(columns = ['genre'])
+Y = music_data['genre']
+
+model = DecisionTreeClassifier()
+model.fit(X,Y)
+predictions = model.predict([[21,1],[22,0]])
+predictions
+
+#calcultaing the accuracy of the model
+#split into 2 sets, training and testing
+
